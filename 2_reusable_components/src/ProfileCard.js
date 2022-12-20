@@ -1,4 +1,4 @@
-function ProfileCard({ title, handle, image }){
+function ProfileCard({ title, handle, image, description }){
     // destructuring
     // const { title, handle } = props;
 
@@ -14,6 +14,9 @@ function ProfileCard({ title, handle, image }){
                 <div className="media-content">
                     <p className="title is-4">Title is {title}</p>
                     <p className="subtitle is-6">Handle is {handle}</p>
+                </div>
+                <div className="content">
+                    {description}
                 </div>
             </div>
         </div>
