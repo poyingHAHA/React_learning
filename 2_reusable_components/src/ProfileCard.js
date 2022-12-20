@@ -1,0 +1,13 @@
+function ProfileCard({ title, handle }){
+    // destructuring
+    // const { title, handle } = props;
+
+    return (
+        <div>
+            <div>Title is {title}</div>
+            <div>Handle is {handle}</div>
+        </div>
+    )
+}
+
+export default ProfileCard;
