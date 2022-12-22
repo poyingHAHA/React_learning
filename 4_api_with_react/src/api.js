@@ -10,7 +10,7 @@ const searchImages = async (term) => {
         }
     });
 
-    return response.data.result;
+    return response.data.results;
 }
 
 export default searchImages;
