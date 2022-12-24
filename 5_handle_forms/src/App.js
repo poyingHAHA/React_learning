@@ -1,9 +1,18 @@
 import {useState} from 'react';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
+import axios from 'axios';
 
 function App(){
     const [books, setBooks] = useState([]);
+    const fetchBooks = async () => {
+        const response = await axios.get('http://localhost:3001/books');
+        setBooks(response.data);
+    }
+
+    // DON't DO THIS
+    // fetchBooks();
+
     const editBookById = (id, newTitle) => {
         const updatedBooks = books.map((book) => {
             if(book.id === id){
@@ -22,14 +31,15 @@ function App(){
 
         setBooks(updatedBooks);
     }
-    const handleCreateBook = (title) => {
-        // Bad code!!
-        // books.push({id: 123, title: title});
+    const createBook = async (title) => {
+        const response = await axios.post('http://localhost:3001/books', {
+            title
+        });
+
         const updatedBooks = [
             ...books,
-            {id: Math.round(Math.random() * 9999), title}
+            response.data
         ];
-
         setBooks(updatedBooks);
     }
 
@@ -37,7 +47,7 @@ function App(){
         <div className='app'>
             <h1>Reading List</h1>
             <BookList books={books} onEdit={editBookById} onDelete={deleteBookById} />
-            <BookCreate onCreate={handleCreateBook} />
+            <BookCreate onCreate={createBook} />
         </div>
     )
 }
