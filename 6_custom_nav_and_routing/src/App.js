@@ -1,10 +1,11 @@
 import Button from "./Button";
+import "./index.css";
 
 function App(){
     return (
         <div>
             <div>
-                <Button success primary>Click me!!</Button>
+                <Button>Click me!!</Button>
             </div>
             <div>
                 <Button>Buy Now!!</Button>

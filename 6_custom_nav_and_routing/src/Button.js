@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 function Button({
     children,
@@ -11,7 +11,7 @@ function Button({
     rounded
 }){
     return (
-        <button>{children}</button>
+        <button className="bg-red-500">{children}</button>
     );
 }
 
@@ -21,7 +21,7 @@ Button.propTypes = {
             + Number(!!secondary) 
             + Number(!!success) 
             + Number(!!danger)
-            + Number(!!warning)
+            + Number(!!warning);
         
             if(count > 1){
                 return new Error('Only one can be true');
