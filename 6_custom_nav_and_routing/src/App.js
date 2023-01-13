@@ -10,7 +10,7 @@ function App(){
     return (
         <div>
             <div>
-                <Button success rounded outline onClick={handleClick}><GoBell />Click me!!</Button>
+                <Button className="mb-5" success rounded outline onClick={handleClick}><GoBell />Click me!!</Button>
             </div>
             <div>
                 <Button danger outline onMouseEnter={handleClick}><GoCloudDownload />Buy Now!!</Button>
