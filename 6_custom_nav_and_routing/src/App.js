@@ -3,13 +3,17 @@ import Button from "./Button";
 import "./index.css";
 
 function App(){
+  const handleClick = () => {
+    console.log("CLick!!");
+  }
+
     return (
         <div>
             <div>
-                <Button success rounded outline><GoBell />Click me!!</Button>
+                <Button success rounded outline onClick={handleClick}><GoBell />Click me!!</Button>
             </div>
             <div>
-                <Button danger outline><GoCloudDownload />Buy Now!!</Button>
+                <Button danger outline onMouseEnter={handleClick}><GoCloudDownload />Buy Now!!</Button>
             </div>
             <div>
                 <Button warning><GoDatabase />See Data!</Button>
