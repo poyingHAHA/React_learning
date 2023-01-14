@@ -29,7 +29,7 @@ function Dropdown({ options, selection, onSelect }) {
 
   return (
     <div>
-      <div onClick={handleCLick} >{content}</div>
+      <div onClick={handleCLick} >{selection?.label || 'Select...'}</div>
       {isOpen && <div>{renderedOptions}</div>}
     </div>
   )
