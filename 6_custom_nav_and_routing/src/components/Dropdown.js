@@ -8,7 +8,12 @@ function Dropdown({ options, value, onChange }) {
 
   useEffect(() => {
     const handler = (event) => {
-      console.log(divEl);
+      if(!divEl.current){ // if we don't have the reference to the div, no need to do the following
+        return;
+      }
+      if(!divEl.current.contains(event.target)){ // control only one dropdown can open
+        setIsOpen(false);
+      }
     };
     document.addEventListener("click", handler, true);
 
