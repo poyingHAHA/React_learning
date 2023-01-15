@@ -5,13 +5,16 @@ function Link({to, children}){
   const {navigate} = useContext(NavigationContext);
 
   const handleClick = (event) => {
+    if(event.metaKey || event.ctrlKey){ // metaKey=command in mac
+      return;
+    }
     event.preventDefault();
 
     navigate(to);
   };
   
   return (
-    <a onClick={handleClick}>{children}</a>
+    <a href={to} onClick={handleClick}>{children}</a>
   )
 }
 
