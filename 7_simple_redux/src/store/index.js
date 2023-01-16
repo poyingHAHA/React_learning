@@ -19,13 +19,4 @@ const store = configureStore({
   }
 })
 
-const startState = store.getState();
-console.log(JSON.stringify(startState));
-
-store.dispatch({
-  type: "song/addSong",
-  payload: "New Song!!!"
-});
-
-const finalState = store.getState();
-console.log(JSON.stringify(finalState));
+export {store};
