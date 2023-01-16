@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./style.css";
 import MoviePlaylist from "./components/MoviePlaylist";
 import SongPlaylist from "./components/SongPlaylist";
 
