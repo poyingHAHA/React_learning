@@ -47,7 +47,7 @@ function CarForm() {
             <label className="label">Cost</label>
             <input
               className="input is-expanded"
-              value={cost || ''}
+              value={cost || ""}
               type="number"
               onChange={handleCostChange}
             />
@@ -55,7 +55,9 @@ function CarForm() {
         </div>
 
         <div className="field">
-          <button onClick={handleSubmit} className="button is-link">Submit</button>
+          <button onClick={handleSubmit} className="button is-link">
+            Submit
+          </button>
         </div>
       </form>
     </div>
