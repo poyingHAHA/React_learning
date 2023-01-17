@@ -17,7 +17,6 @@ function CarSearch(){
         <label className="label">Search</label>
         <input className="input" value={searchTerm} onChange={handleSearchTermChange}/>
       </div>
-      CarSearch
     </div>
   )
 }
