@@ -9,7 +9,9 @@ const albumsApi = createApi({
   endpoints(builder) {
     return {
       addAlbum: builder.mutation({
-        invalidatesTags: ['Album'],
+        invalidatesTags: (result, error, user) => {
+          return [{type: 'Album', id: user.id}]
+        },
         query: (user) => {
           return {
             url: "albums",
@@ -22,7 +24,11 @@ const albumsApi = createApi({
         },
       }),
       fetchAlbums: builder.query({
-        providesTags: ['Album'],
+        // whenever you define provides tags as a function, 
+        // that function is going to be called automatically with a couple of different arguments.
+        providesTags: (result, error, user) => {
+          return [{ type: 'Album', id: user.id }];
+        },
         query: (user) => {
           return {
             url: "albums",
