@@ -18,6 +18,11 @@
       "id": 21,
       "title": "Hiking Trip",
       "userId": 21
+    },
+    {
+      "userId": 21,
+      "title": "Rustic Metal Computer",
+      "id": 22
     }
   ],
   "photos": []
