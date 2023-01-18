@@ -14,8 +14,9 @@ function UsersList() {
   }, [dispatch]);
 
   if(isLoading) {
+    console.log("loading...")
     return (
-      <Skeleton times={6}/>
+      <Skeleton times={6} className="h-10 w-full" />
     )
   }
 
