@@ -16,12 +16,12 @@ function UsersList() {
     setIsLoadingUsers(true);
     dispatch(fetchUsers())
       .unwrap() // since dispatch return a promise that doesn't work as expected
-      .then(() => {
-        console.log("success")
+      .catch((err) => {
+        setLoadingUsersError(err);
       })
-      .catch(() => {
-        console.log("error")
-      })
+      .finally(() => {
+        setIsLoadingUsers(false);
+      });
   }, [dispatch]);
 
   const handleUserAdd = () => {
