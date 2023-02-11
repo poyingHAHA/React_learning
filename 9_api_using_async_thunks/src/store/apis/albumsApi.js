@@ -21,7 +21,7 @@ const albumsApi = createApi({
     return {
       addAlbum: builder.mutation({
         invalidatesTags: (result, error, user) => {
-          return [{ type: "Album", id: user.id }];
+          return [{ type: "UsersAlbums", id: user.id }];
         },
         query: (user) => {
           return {
@@ -38,7 +38,11 @@ const albumsApi = createApi({
         // whenever you define provides tags as a function,
         // that function is going to be called automatically with a couple of different arguments.
         providesTags: (result, error, user) => {
-          return [{ type: "Album", id: user.id }];
+          const tags = result.map(album => {
+            return { type: 'Album', id: album.id }
+          });
+          tags.push({ type: 'UsersAbums', id: user.id })
+          return tags;
         },
         query: (user) => {
           return {
@@ -53,7 +57,7 @@ const albumsApi = createApi({
       removeAlbum: builder.mutation({
         invalidatesTags: (result, error, album) => {
           console.log(album);
-          return [{ type: 'Album', id: album.userId }];
+          return [{ type: 'Album', id: album.id }];
         },
         query: (album) => {
           return {            
