@@ -2,6 +2,7 @@ import AssetsBlock from "./components/AssetsBlock"
 import CakeBlock from "./components/CakeBlock"
 import CoffeeBeanBlock from "./components/CoffeeBeanBlock"
 import CoffeeBlock from "./components/CoffeeBlock"
+import Pokemons from "./components/Pokemons"
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <CoffeeBlock/>
       <CoffeeBeanBlock/>
       <CakeBlock/>
+      <Pokemons/>
     </div>
   )
 }
