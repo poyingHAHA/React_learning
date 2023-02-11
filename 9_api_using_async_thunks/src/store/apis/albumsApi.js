@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { faker } from "@faker-js/faker";
 
-const pause = (duration) => { 
+const pause = (duration) => {
   return new Promise((resolve) => {
     setTimeout(resolve, duration);
-  })
-}
+  });
+};
 
 const albumsApi = createApi({
   reducerPath: "albums",
@@ -14,14 +14,14 @@ const albumsApi = createApi({
     fetchFn: async (...args) => {
       // adding a pause for testing, remove for production
       await pause(1000);
-      return fetch(...args)
-    }
+      return fetch(...args);
+    },
   }),
   endpoints(builder) {
     return {
       addAlbum: builder.mutation({
         invalidatesTags: (result, error, user) => {
-          return [{type: 'Album', id: user.id}]
+          return [{ type: "Album", id: user.id }];
         },
         query: (user) => {
           return {
@@ -35,10 +35,10 @@ const albumsApi = createApi({
         },
       }),
       fetchAlbums: builder.query({
-        // whenever you define provides tags as a function, 
+        // whenever you define provides tags as a function,
         // that function is going to be called automatically with a couple of different arguments.
         providesTags: (result, error, user) => {
-          return [{ type: 'Album', id: user.id }];
+          return [{ type: "Album", id: user.id }];
         },
         query: (user) => {
           return {
@@ -50,9 +50,21 @@ const albumsApi = createApi({
           };
         },
       }),
+      removeAlbum: builder.mutation({
+        query: (album) => {
+          return {
+            method: "DELETE",
+            url: `/albums/${album.id}`,
+          };
+        },
+      }),
     };
   },
 });
 
-export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi;
+export const {
+  useFetchAlbumsQuery,
+  useAddAlbumMutation,
+  useRemoveAlbumMutation,
+} = albumsApi;
 export { albumsApi };
