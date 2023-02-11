@@ -1,8 +1,11 @@
-// App.js
+import CoffeeBlock from "./components/CoffeeBlock"
+
 function App() {
+
   return (
     <div className="container">
-      <h1>Hello World!</h1>
+      <h1>Restaurant Record</h1>
+      <CoffeeBlock/>
     </div>
   )
 }
