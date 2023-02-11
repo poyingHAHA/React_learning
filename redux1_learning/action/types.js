@@ -1,6 +1,8 @@
 // action type
 const COFFEE_ORDERED = 'COFFEE_ORDERED';
+const COFFEE_RESTOCKED = 'COFFEE_RESTOCKED';
 
 module.exports = {
-  COFFEE_ORDERED
+  COFFEE_ORDERED,
+  COFFEE_RESTOCKED
 }
