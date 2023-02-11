@@ -25,6 +25,20 @@ const orderReducer = (state = initialState, action) => {
         numOfCoffee: state.numOfCoffee + action.payload.qty,
         assets: state.assets - action.payload.pay
       }
+      case COFFEEBEAN_ORDERED:
+        // 顧客買 => 商品-, 營收+ 
+        return {
+          ...state,
+          numOfCoffeeBean: state.numOfCoffeeBean - action.payload.qty,
+          assets: state.assets + action.payload.income
+        }
+      case COFFEEBEAN_RESTOCKED:
+        // 補貨 => 商品+, 營收-
+        return {
+          ...state,
+          numOfCoffeeBean: state.numOfCoffeeBean + action.payload.qty,
+          assets: state.assets - action.payload.pay
+        }
     default: 
       return state;
   }

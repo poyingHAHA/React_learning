@@ -11,6 +11,17 @@ const orderCoffee = (qty, income) => {
   }
 }
 
+const orderCoffeeBean = (qty, income) => {
+  return {
+    type: COFFEEBEAN_ORDERED,
+    payload: {
+      qty: qty,
+      income: income
+    }
+  }
+}
+
 module.exports = {
   orderCoffee,
+  orderCoffeeBean
 }

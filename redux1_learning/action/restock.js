@@ -11,6 +11,17 @@ const restockCoffee = (qty, pay) => {
   }
 }
 
+const restockCoffeeBean = (qty, pay) => {
+  return {
+    type: COFFEEBEAN_RESTOCKED,
+    payload: {
+      qty: qty,
+      pay: pay,
+    }
+  }
+}
+
 module.exports = {
-  restockCoffee
+  restockCoffee,
+  restockCoffeeBean
 }
