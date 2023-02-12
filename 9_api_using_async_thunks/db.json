@@ -15,39 +15,9 @@
   ],
   "albums": [
     {
-      "userId": 21,
-      "title": "Licensed Soft Cheese",
-      "id": 23
-    },
-    {
-      "userId": 21,
-      "title": "Recycled Bronze Chips",
-      "id": 24
-    },
-    {
-      "userId": 21,
-      "title": "Unbranded Rubber Towels",
-      "id": 25
-    },
-    {
       "userId": 23,
       "title": "Generic Concrete Ball",
       "id": 26
-    },
-    {
-      "userId": 21,
-      "title": "Licensed Frozen Pants",
-      "id": 27
-    },
-    {
-      "userId": 21,
-      "title": "Rustic Rubber Chair",
-      "id": 28
-    },
-    {
-      "userId": 21,
-      "title": "Handcrafted Plastic Chair",
-      "id": 29
     },
     {
       "userId": 21,
@@ -85,5 +55,21 @@
       "id": 36
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 32,
+      "url": "https://loremflickr.com/150/150/abstract?lock=63943",
+      "id": 1
+    },
+    {
+      "albumId": 32,
+      "url": "https://loremflickr.com/150/150/abstract?lock=18073",
+      "id": 2
+    },
+    {
+      "albumId": 30,
+      "url": "https://loremflickr.com/150/150/abstract?lock=50399",
+      "id": 3
+    }
+  ]
 }
